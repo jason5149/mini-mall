@@ -32,7 +32,6 @@
     "path": "/api/user/:id",
     "regexp": "/^\\/api\\/user\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
     "stack": [
-      "middleware",
       "wrappedController"
     ]
   },

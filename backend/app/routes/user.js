@@ -3,7 +3,7 @@ module.exports = app => {
 
   const userRouter = router.namespace('/api/user');
 
-  userRouter.get('/:id', app.jwt, controller.user.getUser);
+  userRouter.get('/:id', controller.user.getUser);
   userRouter.post('/', controller.user.createUser);
   userRouter.put('/:id', controller.user.updateUser);
   userRouter.delete('/:id', controller.user.deleteUser);
