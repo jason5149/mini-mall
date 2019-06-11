@@ -3,7 +3,7 @@ const { Controller } = require('egg');
 class UserCtrl extends Controller {
   async getUser() {
     try {
-      const result = await this.service.user.findUserById();  
+      const result = await this.service.user.getUserInfoById();  
 
       this.ctx.succ(result);
     } catch ({ code = 500, message = '未定义错误' }) {
@@ -12,7 +12,7 @@ class UserCtrl extends Controller {
   }
   async createUser() {
     try {
-      const result = await this.service.user.createUser();
+      const result = await this.service.user.createUserInfo();
 
       this.ctx.succ(result);
     } catch ({ code = 500, message = '未定义错误' }) {
@@ -20,14 +20,20 @@ class UserCtrl extends Controller {
     }
   }
   async updateUser() {
-    this.ctx.succ('update user');
+    try {
+      const result = await this.service.user.updateUserInfo();
+
+      this.ctx.succ(result);
+    } catch ({ code = 500, message = '未定义错误' }) {
+      this.ctx.fail(code, message);
+    }
   }
   async deleteUser() {
     this.ctx.succ('delete user');
   }
   async login() {
     try {
-      const result = await this.service.user.login();  
+      const result = await this.service.user.userLogin();  
 
       this.ctx.succ(result);
     } catch ({ code = 500, message = '未定义错误' }) {

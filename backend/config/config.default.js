@@ -12,16 +12,8 @@ module.exports = {
       enable: false,
     },
   },
-  mongoose: {
-    url: 'mongodb://47.103.50.83:27017/mini-mall',
-    options: {
-      // server: {
-      //   poolSize: 40,
-      // },
-    },
-  },
   jwt: {
-    secret: '123456',
+    secret: '363351',
   },
   middleware: ['errorHandler', 'requestHandler', 'authHandler'],
   errorHandler: {
